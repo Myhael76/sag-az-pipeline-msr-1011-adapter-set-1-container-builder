@@ -3,8 +3,8 @@
 . ./setEnv.sh
 . ${SUIF_HOME}/01.scripts/commonFunctions.sh
 
-SHARED_INSTALL_IMAGE_FILE="$MY_sd/products/${MY_MSR_template}/products.zip"
-SHARED_PATCH_FIXES_IMAGE_FILE="$MY_sd/fixes/${MY_MSR_template}/${MY_fixTag}/fixes.zip"
+SHARED_INSTALL_IMAGE_FILE="$MY_sd/products/${MY_template}/products.zip"
+SHARED_PATCH_FIXES_IMAGE_FILE="$MY_sd/fixes/${MY_template}/${MY_fixTag}/fixes.zip"
 
 if [ ! -f "${SHARED_INSTALL_IMAGE_FILE}" ]; then
   logE "Products image file must exist in the share: ${SHARED_INSTALL_IMAGE_FILE}"

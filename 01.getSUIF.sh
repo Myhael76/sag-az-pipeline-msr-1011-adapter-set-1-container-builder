@@ -16,6 +16,9 @@ if [ ! -f "${SUIF_HOME}/01.scripts/commonFunctions.sh" ]; then
   exit 2
 fi
 
+. "${SUIF_HOME}/01.scripts/commonFunctions.sh"
+
 logI "Preparing the installation folder"
+
 sudo mkdir -p "${SUIF_INSTALL_INSTALL_DIR}"
 sudo chmod a+w "${SUIF_INSTALL_INSTALL_DIR}"

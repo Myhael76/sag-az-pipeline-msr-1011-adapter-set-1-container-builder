@@ -7,9 +7,9 @@
 logI "SUIF env before installation:"
 env | grep SUIF_ | sort
 
-logI "Installing Product according to template ${MY_MSR_template}..."
+logI "Installing Product according to template ${MY_template}..."
 
-applySetupTemplate "${MY_MSR_template}"
+applySetupTemplate "${MY_template}"
 
 local installResult=$?
 

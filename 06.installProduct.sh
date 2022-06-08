@@ -11,7 +11,7 @@ logI "Installing Product according to template ${MY_template}..."
 
 applySetupTemplate "${MY_template}"
 
-local installResult=$?
+installResult=$?
 
 if [ "${installResult}" -ne 0 ]; then
   logE "Installation failed, code ${installResult}"

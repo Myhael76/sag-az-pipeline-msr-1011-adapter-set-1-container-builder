@@ -5,6 +5,8 @@
 
 logI "Updating base libraries..."
 sudo apt-get -y update
+logI "Upgrading libraries"
+sudo apt-get -y upgrade
 logI "Installing prerequisites..."
 sudo apt-get -y install wget ca-certificates gnupg2 fuse-overlayfs
 logI "Installing buildah..."

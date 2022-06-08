@@ -1,0 +1,1 @@
+# sag-az-pipeline-msr-1011-adapter-set-1-container-builder

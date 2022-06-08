@@ -20,7 +20,7 @@ export AZ_ACR_CANONICAL_CONTAINER_IMAGE_FULL_NAME="${AZ_ACR_URL}/${AZ_ACR_REPO_N
 
 # SUIF references
 export SUIF_AUDIT_BASE_DIR=/tmp/SUIF_AUDIT
-export SUIF_DEBUG_ON=1
+export SUIF_DEBUG_ON=0
 export SUIF_FIXES_DATE_TAG="${MY_fixTag}"
 export SUIF_HOME=/tmp/SUIF
 export SUIF_INSTALL_IMAGE_FILE="/tmp/products.zip"

@@ -3,7 +3,7 @@ trigger:
 - main
 
 pool:
-  name: GCC_MIUN_VMSS
+  name: ImagesBuilderPool
   vmImage: Canonical:0001-com-ubuntu-confidential-vm-focal:20_04-lts-gen2:latest
 
 jobs:

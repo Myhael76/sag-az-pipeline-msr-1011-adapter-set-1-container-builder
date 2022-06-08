@@ -24,29 +24,30 @@ COPY --chown=1724:1724 ./IntegrationServer/replicate/ /tmp/sag-home-temp/Integra
 
 COPY --chown=1724:1724 ./IntegrationServer/.tc.custom.log4j2.properties /tmp/sag-home-temp/IntegrationServer/.tc.custom.log4j2.properties
 
-COPY --chown=1724:1724 ./IntegrationServer/db/ /tmp/sag-home-temp/IntegrationServer/db/
+# actually ./IntegrationServer/db/ does not exist before the first start...
+# COPY --chown=1724:1724 ./IntegrationServer/db/ /tmp/sag-home-temp/IntegrationServer/db/
 COPY --chown=1724:1724 ./IntegrationServer/config/ /tmp/sag-home-temp/IntegrationServer/config/
 
 COPY --chown=1724:1724 ./IntegrationServer/packages/Default/ /tmp/sag-home-temp/IntegrationServer/packages/Default/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmAS400/ /tmp/sag-home-temp/IntegrationServer/packages/WmAS400/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmSAP/ /tmp/sag-home-temp/IntegrationServer/packages/WmSAP/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloudStreams/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloudStreams/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmARTExtDC/ /tmp/sag-home-temp/IntegrationServer/packages/WmARTExtDC/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloudStreamsAPI/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloudStreamsAPI/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmJDBCAdapter/ /tmp/sag-home-temp/IntegrationServer/packages/WmJDBCAdapter/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmISExtDC/ /tmp/sag-home-temp/IntegrationServer/packages/WmISExtDC/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmConsul/ /tmp/sag-home-temp/IntegrationServer/packages/WmConsul/
 COPY --chown=1724:1724 ./IntegrationServer/packages/WmAdmin/ /tmp/sag-home-temp/IntegrationServer/packages/WmAdmin/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmART/ /tmp/sag-home-temp/IntegrationServer/packages/WmART/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmARTExtDC/ /tmp/sag-home-temp/IntegrationServer/packages/WmARTExtDC/
+# COPY --chown=1724:1724 ./IntegrationServer/packages/WmAS400/ /tmp/sag-home-temp/IntegrationServer/packages/WmAS400/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloud/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloud/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloudStreams/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloudStreams/
 COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloudStreamsAnalytics/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloudStreamsAnalytics/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmXSLT/ /tmp/sag-home-temp/IntegrationServer/packages/WmXSLT/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmRoot/ /tmp/sag-home-temp/IntegrationServer/packages/WmRoot/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmPublic/ /tmp/sag-home-temp/IntegrationServer/packages/WmPublic/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmKafkaAdapter/ /tmp/sag-home-temp/IntegrationServer/packages/WmKafkaAdapter/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloudStreamsAPI/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloudStreamsAPI/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmConsul/ /tmp/sag-home-temp/IntegrationServer/packages/WmConsul/
 COPY --chown=1724:1724 ./IntegrationServer/packages/WmFlatFile/ /tmp/sag-home-temp/IntegrationServer/packages/WmFlatFile/
 COPY --chown=1724:1724 ./IntegrationServer/packages/WmHBaseAdapter/ /tmp/sag-home-temp/IntegrationServer/packages/WmHBaseAdapter/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmCloud/ /tmp/sag-home-temp/IntegrationServer/packages/WmCloud/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmISExtDC/ /tmp/sag-home-temp/IntegrationServer/packages/WmISExtDC/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmJDBCAdapter/ /tmp/sag-home-temp/IntegrationServer/packages/WmJDBCAdapter/
 COPY --chown=1724:1724 ./IntegrationServer/packages/WmJSONAPI/ /tmp/sag-home-temp/IntegrationServer/packages/WmJSONAPI/
-COPY --chown=1724:1724 ./IntegrationServer/packages/WmART/ /tmp/sag-home-temp/IntegrationServer/packages/WmART/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmKafkaAdapter/ /tmp/sag-home-temp/IntegrationServer/packages/WmKafkaAdapter/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmPublic/ /tmp/sag-home-temp/IntegrationServer/packages/WmPublic/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmRoot/ /tmp/sag-home-temp/IntegrationServer/packages/WmRoot/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmSAP/ /tmp/sag-home-temp/IntegrationServer/packages/WmSAP/
+COPY --chown=1724:1724 ./IntegrationServer/packages/WmXSLT/ /tmp/sag-home-temp/IntegrationServer/packages/WmXSLT/
 
 
 FROM ${__from_img}

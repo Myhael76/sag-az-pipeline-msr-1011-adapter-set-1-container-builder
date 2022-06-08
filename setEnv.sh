@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # options
-export MY_fixTag="22-05-15"
-export MY_SUIF_TAG="v.0.0.3-temp"
+export MY_fixTag="22-06-06"
+export MY_SUIF_TAG="v.0.3.0"
 export MY_template="MSR/1011/AdaptersSet1"
 export AZ_ACR_URL="miunsagimages.azurecr.io"
 export AZ_ACR_REPO_NAME="sag-msr-1011-as1"

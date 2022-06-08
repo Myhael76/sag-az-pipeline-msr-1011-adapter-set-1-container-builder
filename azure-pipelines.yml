@@ -1,0 +1,83 @@
+
+trigger:
+- main
+
+pool:
+  name: GCC_MIUN_VMSS
+  vmImage: Canonical:0001-com-ubuntu-confidential-vm-focal:20_04-lts-gen2:latest
+
+jobs:
+- job: buildMsrAdapterSet1
+  displayName: Build MSR AS 1 Container Image
+  steps:
+
+  - script: chmod u+x ./*.sh
+    displayName: Allow project scripts to execute
+
+  # get SUIF
+  - script: ./01.getSUIF.sh
+    displayName: 'Get SUIF'
+
+  # get SA share secrets
+  - task: DownloadSecureFile@1
+    name: SASecureInfo
+    displayName: 'Download secure information for images share'
+    inputs:
+      secureFile: 'sa.share.secrets.sh'
+
+  # mount SA share
+  - script: ./02.mountImagesShare.sh
+    displayName: 'Mount images share'
+
+  # update ubuntu machine
+  - script: ./03.prepareMachine.sh
+    displayName: 'System software preparation'
+  
+  # Assure binary installatiom files
+  - script: ./04.assureInstallBinaries.sh 
+    displayName: 'Get installation binaries'
+
+  # Assure image files
+  - script: ./05.assureProductImages.sh 
+    displayName: 'Get product images'
+
+  # MSR license is required at build time
+  - task: DownloadSecureFile@1
+    name: msrLicense
+    displayName: 'Download MSR license'
+    inputs:
+      secureFile: 'msr-license.xml'
+
+  # Install Product
+  - script: ./06.installProduct.sh
+    displayName: 'Install Product'
+
+  # Containerize Canonical
+  - script: ./07.containerize.sh
+    displayName: 'Containerize'
+
+  # Service Principal Credentials
+  - task: DownloadSecureFile@1
+    name: SPCredentials
+    displayName: 'Download SP credentials'
+    inputs:
+      secureFile: 'sp.credentials.sh'
+
+  # push the image
+  # TODO: if commit is tagged, propagate the tag too...
+  # TODO: push the "${AZ_ACR_CONTAINER_IMAGE_FULL_NAME}" without the fine date only for master branch...
+  - script: ./08.pushImage.sh
+    displayName: 'Push built image(s)'
+
+  # Save audit on share 
+  # HINT: ou should use this step only for debug purposes
+  # HINT: without this step the mount may be readonly
+  - script: ./11.saveAudit.sh
+    displayName: 'Save Audit on Share'
+    condition: always()
+
+  # umount SA share
+  - script: ./12.unmountShare.sh
+    displayName: 'Unmount images share'
+    condition: always()
+

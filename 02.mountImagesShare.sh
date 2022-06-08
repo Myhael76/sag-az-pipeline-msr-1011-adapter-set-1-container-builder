@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 . ${SUIF_HOME}/01.scripts/commonFunctions.sh
 
 if [ ! -f "${SASECUREINFO_SECUREFILEPATH}" ]; then
@@ -16,8 +16,6 @@ if [ -z ${SAG_AZ_SA_NAME+x} ]; then
   echo "Secure information has not been sourced correctly"
   exit 2
 fi
-
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
 
 if [ -z ${MY_sd+x} ]; then
   echo "Secure information has not been sourced correctly"

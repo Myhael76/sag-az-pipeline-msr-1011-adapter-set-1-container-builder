@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 . ${SUIF_HOME}/01.scripts/commonFunctions.sh
 
 SHARED_INSTALL_IMAGE_FILE="$MY_sd/products/${MY_MSR_template}/products.zip"

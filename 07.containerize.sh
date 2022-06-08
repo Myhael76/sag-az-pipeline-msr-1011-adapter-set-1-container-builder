@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 . ${SUIF_HOME}/01.scripts/commonFunctions.sh
 
 logI "Containerizing MS according to product default approach"

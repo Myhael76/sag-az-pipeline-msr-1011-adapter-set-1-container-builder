@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 
 echo "Environment dump before SUIF download"
 env | sort

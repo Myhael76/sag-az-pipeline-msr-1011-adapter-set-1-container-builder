@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 . ${SUIF_HOME}/01.scripts/commonFunctions.sh
 
 if [ ! -f "${MY_installerSharedBin}" ]; then

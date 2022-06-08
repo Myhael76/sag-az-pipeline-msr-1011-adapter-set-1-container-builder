@@ -1,5 +1,5 @@
 #!/bin/bash
 
-. ${BUILD_SOURCESDIRECTORY}/scripts/setEnv.sh
+. ./setEnv.sh
 
 sudo umount "$MY_sd"

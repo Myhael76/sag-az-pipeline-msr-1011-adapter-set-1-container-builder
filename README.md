@@ -6,10 +6,11 @@ The Azure DevOps Project must have
 
 - the following "secure files":
 
-    1. `sa.share.secrets.sh` - Connection credentials towards the input file share containing the binaries and the product and fix images files
+    1. `sa.share.secrets.sh` - Connection credentials towards the input file share containing the binaries and the product and fix images files. See the [image builder pipeline exaple project](https://github.com/Myhael76/sag-az-pipelines-installation-images-builder) for details
     2. `sp.credentials.sh` - Connection credentials to connect to the container registry where the images will be pushed
     3. `msr-license.xml` - Valid MSR license
 
 - a custom agent pool named `ImagesBuilderPool`
 
 See `support` folder for examples.
+

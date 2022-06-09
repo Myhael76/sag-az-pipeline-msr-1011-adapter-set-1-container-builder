@@ -28,3 +28,4 @@ export SUIF_INSTALL_INSTALLER_BIN="./custom/installer.bin"
 export SUIF_INSTALL_TIME_ADMIN_PASSWORD=manage01
 export SUIF_PATCH_FIXES_IMAGE_FILE="./custom/fixes.zip"
 export SUIF_PATCH_SUM_BOOSTSTRAP_BIN="./custom/sum-bootstrap.bin"
+export SUIF_HOME=/tmp/SUIF

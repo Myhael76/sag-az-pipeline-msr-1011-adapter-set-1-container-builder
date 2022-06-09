@@ -48,10 +48,6 @@ jobs:
     inputs:
       secureFile: 'msr-license.xml'
 
-  # Install Product
-  - script: ./06.installProduct.sh
-    displayName: 'Install Product'
-
   # Containerize Canonical
   - script: ./07.containerize.sh
     displayName: 'Containerize'

@@ -1,8 +1,8 @@
 FROM centos:7 as installer
 
-ARG __i_bin=/tmp/installer.bin \
-    __s_bin=/tmp/sum-bootstrap.bin \
-    __my_suif_tag=v.0.3.0
+ARG __i_bin=/tmp/installer.bin
+ARG __s_bin=/tmp/sum-bootstrap.bin
+ARG __my_suif_tag=v.0.3.0
 
 RUN yum -y update ;\ 
     yum -y install git curl gettext which

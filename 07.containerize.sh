@@ -9,9 +9,14 @@
 
 logI "Containerizing IS with customized approach"
 
-cp custom/* "${SUIF_INSTALL_INSTALL_DIR}"/
+if [ ! -f "${MSRLICENSE_SECUREFILEPATH}" ]; then
+  logE "MSR license file not found!"
+  exit 1
+fi
 
-cd "${SUIF_INSTALL_INSTALL_DIR}"
+cp "${MSRLICENSE_SECUREFILEPATH}" ./custom/msr-license.xml
+
+cd ./custom
 logI "Building container"
 buildah \
   --storage-opt mount_program=/usr/bin/fuse-overlayfs \
@@ -21,7 +26,7 @@ buildah \
 contResult=$?
 if [ "${contResult}" -ne 0 ]; then
   logE "Containerization failed, code ${contResult}"
-  exit 1
+  exit 2
 fi
 
 logI "Canonical container image created successfully"
